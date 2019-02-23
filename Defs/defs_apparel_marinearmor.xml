@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!-- abstracts -->
+
+<ThingDef Name="MarineArmorBase" ParentName="ArmorMachineableBase" Abstract="True">
+    <recipeMaker>
+      	<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      	<researchPrerequisite>PoweredArmor</researchPrerequisite>
+        <recipeUsers Inherit="False">
+    		<li>FabricationBench</li>
+      	</recipeUsers>
+    </recipeMaker>
+    <stuffCategories>
+      	<li>Metallic</li>
+    </stuffCategories>
+        <thingCategories>
+      	<li>Apparel</li>
+    </thingCategories>
+    <statBases>
+    	<StuffEffectMultiplierInsulation_Cold>1</StuffEffectMultiplierInsulation_Cold>
+      	<StuffEffectMultiplierInsulation_Heat>1</StuffEffectMultiplierInsulation_Heat>
+    </statBases>
+    <apparel>
+      	<tags>
+        	<li>SpacerMilitary</li>
+      	</tags>
+      	<defaultOutfitTags>
+        	<li>Soldier</li>
+      	</defaultOutfitTags>
+      	<useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+
+  <ThingDef Name="LightMarineArmorBase" ParentName="MarineArmorBase" Abstract="True">
+   	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>9</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>230</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+    </statBases>
+   	<apparel>
+      	<layers>
+        	<li>Armor</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="HeavyMarineArmorBase" ParentName="MarineArmorBase" Abstract="True">
+  	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>9</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>290</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.86</StuffEffectMultiplierArmor>
+
+    </statBases>
+    <equippedStatOffsets>
+      	<MoveSpeed>-0.2</MoveSpeed>
+    </equippedStatOffsets>
+   	<apparel>
+      	<layers>
+        	<li>Armor</li>
+        	<li>Middle</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+    <ThingDef Name="AdvancedMarineArmorBase" ParentName="MarineArmorBase" Abstract="True">
+  	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>12</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>340</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.95</StuffEffectMultiplierArmor>
+    </statBases>
+    <equippedStatOffsets>
+    </equippedStatOffsets>
+   	<apparel>
+      	<layers>
+        	<li>Armor</li>
+        	<li>Middle</li>
+        	<li>Shell</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+      <ThingDef Name="ExoMarineArmorBase" ParentName="MarineArmorBase" Abstract="True">
+  	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>7</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>180</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+    </statBases>
+    <equippedStatOffsets>
+    </equippedStatOffsets>
+   	<apparel>
+      	<layers>
+        	<li>Middle</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+<!-- Marine Armor Pieces -->
+<!-- Lower Body -->
+
+<ThingDef ParentName="LightMarineArmorBase">
+    <defName>Apparel_LightMarineArmorPants</defName>
+    <label>light marine armor legs</label>
+    <description>Advanced engineered armor plates strapped to the legs for protection, with some powered structures to improve movement speed. Unfortunately the armor still impedes work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Uranium>8</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>14000</WorkToMake>
+      	<Mass>2.5</Mass>
+      	<EquipDelay>3</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      	<MoveSpeed>0.3</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyMarineArmorBase">
+    <defName>Apparel_HeavyMarinePants</defName>
+    <label>heavy marine armor legs</label>
+    <description>Advanced armor plates fully encasing the legs for protection, complete with a powered joint system to reduce the impact of heavy armor on movement speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+        <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Uranium>8</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>18000</WorkToMake>
+      	<Mass>5</Mass>
+      	<EquipDelay>5</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      	<MoveSpeed>-0.3</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+    <ThingDef ParentName="AdvancedMarineArmorBase">
+    <defName>Apparel_AdvancedMarinePants</defName>
+    <label>Advanced marine armor legs</label>
+    <description>Advanced glitterworld armor fully encasing the legs for protection. Specially tuned servos actually increase movement speed slightly despite the bulk.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>80</costStuffCount>
+        <costList>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Uranium>20</Uranium>
+      <Hyperweave>20</Hyperweave>
+    </costList>
+    <statBases>
+		<WorkToMake>18000</WorkToMake>
+      	<Mass>6</Mass>
+      	<EquipDelay>6</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      	<MoveSpeed>1</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ExoMarineArmorBase">
+    <defName>Apparel_ExoMarineArmorPants</defName>
+    <label>Powered exo frame legs</label>
+    <description>A modified version of the marine armor arms. Specially tuned robotic servos improve movement speed, but the armor has mosly been stripped off, leaving little in the way of protection.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>20</costStuffCount>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Uranium>8</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>10000</WorkToMake>
+      	<Mass>2.5</Mass>
+      	<EquipDelay>3</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      	<MoveSpeed>2</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+<!-- Upper Body -->
+
+  <ThingDef ParentName="LightMarineArmorBase">
+    <defName>Apparel_LightMarineArmorBody</defName>
+    <label>light marine armor chestpiece</label>
+    <description>Advanced, highly engineered armor plates strapped to the upper body. Gives moderate protection and only mildly impacts work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <costList>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Uranium>8</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>22000</WorkToMake>
+      	<Mass>3.5</Mass>
+      	<EquipDelay>4</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <WorkSpeedGlobal>-.06</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Torso</li>
+        	<li>Neck</li>
+      	</bodyPartGroups>
+		<wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyMarineArmorBase">
+    <defName>Apparel_HeavyMarineArmorBody</defName>
+    <label>heavy marine armor chestpiece</label>
+    <description>Advanced powered armor fully encasing the torso for protection. Robotic servos aid with movement, but the bulk makes work more difficult.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+    <costList>
+      <ComponentSpacer>2</ComponentSpacer>
+      <Uranium>8</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>27000</WorkToMake>
+      	<Mass>6</Mass>
+      	<EquipDelay>6</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      <WorkSpeedGlobal>-.1</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Torso</li>
+        	<li>Neck</li>
+      	</bodyPartGroups>
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+
+  <ThingDef ParentName="AdvancedMarineArmorBase">
+    <defName>Apparel_AdvancedMarineArmorBody</defName>
+    <label>advanced marine armor chestpiece</label>
+    <description>Advanced powered armor fully encasing the torso for protection. Specially tuned robotic servos aid with movement, improving reaction times, although the tuning interferes with other work.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>90</costStuffCount>
+    <costList>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Uranium>20</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>27000</WorkToMake>
+      	<Mass>7</Mass>
+      	<EquipDelay>7</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      		<WorkSpeedGlobal>-.15</WorkSpeedGlobal>
+      		<MeleeHitChance>0.1</MeleeHitChance>
+			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			<AimingDelayFactor>-0.05</AimingDelayFactor>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Torso</li>
+        	<li>Neck</li>
+      	</bodyPartGroups>
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+ <!-- Arms -->
+
+   <ThingDef ParentName="LightMarineArmorBase">
+    <defName>Apparel_LightMarineArmorArms</defName>
+    <label>light marine armor arms</label>
+    <description>Advanced, highly engineered armor plates strapped to the arms. Gives moderate protection and a slight bonus to weapons, with a moderate penalty to work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>25</costStuffCount>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Uranium>4</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>12000</WorkToMake>
+      	<Mass>1.8</Mass>
+      	<EquipDelay>2</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      	<WorkSpeedGlobal>-.03</WorkSpeedGlobal>
+		<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+		<AimingDelayFactor>-0.06</AimingDelayFactor>
+		<MeleeArmorPenetration>0.05</MeleeArmorPenetration>
+		<MeleeHitChance>0.1</MeleeHitChance>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Shoulders</li>
+        	<li>Arms</li>
+      	</bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyMarineArmorBase">
+    <defName>Apparel_HeavyMarineArmorBody</defName>
+    <label>heavy marine armor chestpiece</label>
+    <description>Advanced powered armor fully encasing the arms. The bulk makes work more difficult, but advanced servos help in the heat of battle.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>30</costStuffCount>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Uranium>4</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>14000</WorkToMake>
+      	<Mass>4</Mass>
+      	<EquipDelay>4</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+			<WorkSpeedGlobal>-.06</WorkSpeedGlobal>
+			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+			<AimingDelayFactor>-0.03</AimingDelayFactor>
+			<MeleeArmorPenetration>0.1</MeleeArmorPenetration>
+			<MeleeHitChance>0.06</MeleeHitChance>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Shoulders</li>
+        	<li>Arms</li>
+      	</bodyPartGroups>
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+
+  <ThingDef ParentName="AdvancedMarineArmorBase">
+    <defName>Apparel_AdvancedMarineArmorArms</defName>
+    <label>advanced marine armor arms</label>
+    <description>Advanced powered armor covering the arms. Specially tuned robotic servos improve reaction times, although the tuning interferes with other work.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>90</costStuffCount>
+    <costList>
+      <ComponentSpacer>4</ComponentSpacer>
+      <Uranium>20</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>27000</WorkToMake>
+      	<Mass>7</Mass>
+      	<EquipDelay>7</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+			<WorkSpeedGlobal>-.15</WorkSpeedGlobal>
+			<ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+			<AimingDelayFactor>-0.1</AimingDelayFactor>
+			<MeleeArmorPenetration>0.1</MeleeArmorPenetration>
+			<MeleeHitChance>0.1</MeleeHitChance>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Shoulders</li>
+        	<li>Arms</li>
+      	</bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+    <ThingDef ParentName="ExoMarineArmorBase">
+    <defName>Apparel_ExoMarineArmorArms</defName>
+    <label>Powered Exo Frame Arms</label>
+    <description>A modified version of the marine armor arms. Specially tuned robotic servos improve work speed, but the armor has mosly been stripped off, leaving little in the way of protection. Some of the combat tuning remains, but not as much as with the specialist armor.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PowerArmor/PowerArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>10</costStuffCount>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <Uranium>20</Uranium>
+    </costList>
+    <statBases>
+		<WorkToMake>10000</WorkToMake>
+      	<Mass>3</Mass>
+      	<EquipDelay>4</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+			<WorkSpeedGlobal>.20</WorkSpeedGlobal>
+			<ShootingAccuracyPawn>0.03</ShootingAccuracyPawn>
+			<AimingDelayFactor>-0.03</AimingDelayFactor>
+			<MeleeArmorPenetration>0.02</MeleeArmorPenetration>
+			<MeleeHitChance>0.04</MeleeHitChance>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Shoulders</li>
+        	<li>Arms</li>
+      	</bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+</Defs>

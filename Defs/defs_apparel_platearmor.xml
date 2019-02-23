@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!-- abstracts -->
+
+<ThingDef Name="PlateArmorBase" ParentName="ArmorSmithableBase" Abstract="True">
+    <recipeMaker>
+      	<unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
+      	<researchPrerequisite>PlateArmor</researchPrerequisite>
+    </recipeMaker>
+    <stuffCategories>
+      	<li>Metallic</li>
+      	<li>Woody</li>
+    </stuffCategories>
+        <thingCategories>
+      	<li>Apparel</li>
+    </thingCategories>
+    <equippedStatOffsets>
+      	<MoveSpeed>-0.1</MoveSpeed>
+    </equippedStatOffsets>
+    <statBases>
+        <StuffEffectMultiplierInsulation_Cold>1</StuffEffectMultiplierInsulation_Cold>
+      	<StuffEffectMultiplierInsulation_Heat>0</StuffEffectMultiplierInsulation_Heat>
+      </statBases>
+    <apparel>
+      	<tags>
+        	<li>IndustrialBasic</li>
+      	</tags>
+      	<defaultOutfitTags>
+        	<li>Soldier</li>
+      	</defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+
+  <ThingDef Name="LightPlateArmorBase" ParentName="PlateArmorBase" Abstract="True">
+   	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>6</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>175</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.6</StuffEffectMultiplierArmor>
+    </statBases>
+   	<apparel>
+      	<layers>
+        	<li>Armor</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="HeavyPlateArmorBase" ParentName="PlateArmorBase" Abstract="True">
+  	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>8</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>195</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.73</StuffEffectMultiplierArmor>
+    </statBases>
+    <equippedStatOffsets>
+      	<MoveSpeed>-0.15</MoveSpeed>
+    </equippedStatOffsets>
+   	<apparel>
+      	<layers>
+        	<li>Armor</li>
+        	<li>Middle</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+<!-- Plate Armor Pieces -->
+<!-- Lower Body -->
+
+<ThingDef ParentName="LightPlateArmorBase">
+    <defName>Apparel_LightPlateArmorPants</defName>
+    <label>light plate armor legs</label>
+    <description>Armored Plates strapped around the legs for protection. Very slightly encumbers movement, and provides moderate protection.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+    <statBases>
+		<WorkToMake>10000</WorkToMake>
+      	<Mass>2.5</Mass>
+      	<EquipDelay>3</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      	<MoveSpeed>-0.15</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyPlateArmorBase">
+    <defName>Apparel_HeavyPlateArmorPants</defName>
+    <label>heavy plate armor legs</label>
+    <description>Thick armored Plates fully encasing the legs for protection. Encumbers movement.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>60</costStuffCount>
+    <statBases>
+		<WorkToMake>13000</WorkToMake>
+      	<Mass>5</Mass>
+      	<EquipDelay>5</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      	<MoveSpeed>-0.3</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+
+  <!-- Upper Body -->
+
+  <ThingDef ParentName="LightPlateArmorBase">
+    <defName>Apparel_LightPlateArmorBody</defName>
+    <label>light plate armor chestpiece</label>
+    <description>Light plates of armor strapped to the upper body. Gives moderate protection and only mildly impacts work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>60</costStuffCount>
+    <statBases>
+		<WorkToMake>12000</WorkToMake>
+      	<Mass>3.5</Mass>
+      	<EquipDelay>4</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <WorkSpeedGlobal>-.02</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Torso</li>
+        	<li>Neck</li>
+      	</bodyPartGroups>
+    	<wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyPlateArmorBase">
+    <defName>Apparel_HeavyPlateArmorBody</defName>
+    <label>heavy plate armor chestpiece</label>
+    <description>Thick armored Plates fully encasing the torso for protection. Encumbers movement and slows work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>70</costStuffCount>
+    <statBases>
+		<WorkToMake>15000</WorkToMake>
+      	<Mass>6</Mass>
+      	<EquipDelay>6</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      <WorkSpeedGlobal>-.04</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Torso</li>
+        	<li>Neck</li>
+      	</bodyPartGroups>
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+
+  <!-- Arms -->
+
+  <ThingDef ParentName="LightPlateArmorBase">
+    <defName>Apparel_LightPlateArmorArms</defName>
+    <label>light plate armor arms</label>
+    <description>Light plates of armor strapped to the arms. Gives moderate protection and only mildly impacts work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>30</costStuffCount>
+    <statBases>
+		<WorkToMake>8000</WorkToMake>
+      	<Mass>1.8</Mass>
+      	<EquipDelay>2</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <WorkSpeedGlobal>-.03</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyPlateArmorBase">
+    <defName>Apparel_HeavyPlateArmorArms</defName>
+    <label>heavy plate armor arms</label>
+    <description>Thick armored Plates fully encasing the arms for protection. Encumbers movement and slows work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <statBases>
+		<WorkToMake>10000</WorkToMake>
+      	<Mass>4</Mass>
+      	<EquipDelay>4</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      <WorkSpeedGlobal>-.05</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+
+</Defs>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+
+<!-- Rearrange existing apparel onto layers -->
+
+<!-- Shirt and Pants onto Middle-->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName = "Apparel_CollarShirt" or defName = "Apparel_Pants"]/apparel/layers</xpath>
+    <value>
+      <layers>
+        <li>Middle</li>
+      </layers>
+    </value>
+  </Operation>
+
+  <!-- Remove Plate Armor -->
+<!--
+  <Operation Class="PatchOperationRemove">
+    <xpath>Defs/ThingDef[defName = "Apparel_PlateArmor"]</xpath>
+  </Operation>
+-->
+
+  <!-- All Armors onto armor layer -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName = "Apparel_PlateArmor"
+    				  or defName = "Apparel_PowerArmor"
+    				  or defName = "Apparel_LeatherArmor"
+    				  or defName = "Apparel_FlakPants"]/apparel/layers</xpath>
+    <value>
+      <layers>
+        <li>Middle</li>
+        <li>Armor</li>
+      </layers>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName = "Apparel_FlakVest"]/apparel/layers</xpath>
+    <value>
+      <layers>
+        <li>Armor</li>
+      </layers>
+    </value>
+  </Operation>
+
+  <!-- Make Heat and Cold possible to be negative -->
+
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/StatDef[defName = "StuffEffectMultiplierInsulation_Heat"]/minValue</xpath>
+    <value>
+      <minValue>-2</minValue>
+    </value>
+  </Operation>
+
+   <Operation Class="PatchOperationReplace">
+    <xpath>Defs/StatDef[defName = "StuffEffectMultiplierInsulation_Cold"]/minValue</xpath>
+    <value>
+      <minValue>-2</minValue>
+    </value>
+  </Operation>
+
+<!-- Make Parka Bulkier -->
+
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName = "Apparel_Parka"]/statBases</xpath>
+    <value>
+      <Insulation_Heat>-15</Insulation_Heat>
+    </value>
+  </Operation>
+
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName = "Apparel_Parka"]</xpath>
+    <value>
+    <equippedStatOffsets>
+      <WorkSpeedGlobal>-.05</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    </value>
+  </Operation>
+
+<!-- Make Wool Produce Slightly Heavier Clothing -->
+
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name = "WoolBase"]/stuffProps/statFactors</xpath>
+    <value>
+      <Mass>1.2</Mass>
+    </value>
+  </Operation>
+
+
+
+
+
+
+
+</Patch>

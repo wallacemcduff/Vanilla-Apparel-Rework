@@ -1,0 +1,61 @@
+TODO
+
+XML
+-----
+
+New modular items
+-----------------
+
+Light plate arms/body/legs x
+Heavy plate arms/body/legs x
+Light Leather arms/body/legs
+Heavy Leather arms/body/legs
+Light Marine arms/body/legs x
+Heavy Marine arms/body/legs x
+Advanced Marine arms/body/legs x
+
+
+long underwear x
+advanced underwear (cooling) x
+Super advanced underwear (total temperature management) x
+
+Exoskeleton (work speed) x
+
+Adjust Vanilla Items
+--------------------
+
+Patch work/movespeeds for bulky items o
+Reduce heat tolerance for parka x
+
+Remove Plate and Marine Vanilla Armors
+
+
+Material Rework
+--------------
+
+Reduce Numbers of Leathers:
+Vanilla
+Dinosauria
+Megafauna
+Alpha Animals
+
+Reduce Wools:
+Vanilla
+Dinosauria
+Megafauna
+Alpha Animals
+
+Specialise Temperatures:
+Materials good at Heat or Cold not both
+V Good Cold Materials reduce heat tolerance
+
+ART
+----
+
+
+C#
+------
+
+Repair functionality to remove taint/improve quality
+
+Make total mass of equipped clothing affect move speed/globalworkspeed

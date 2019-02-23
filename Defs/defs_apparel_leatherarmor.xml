@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<!-- abstracts -->
+
+<ThingDef Name="LeatherArmorBase" ParentName="ApparelMakeableBase" Abstract="True">
+    <recipeMaker>
+    </recipeMaker>
+    <stuffCategories>
+      	<li>Leathery</li>
+    </stuffCategories>
+        <thingCategories>
+      	<li>Apparel</li>
+    </thingCategories>
+    <statBases>
+        <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
+      	<StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
+      <Insulation_Heat>-2</Insulation_Heat>
+      </statBases>
+    <apparel>
+      	<tags>
+        	<li>IndustrialBasic</li>
+      	</tags>
+      	<defaultOutfitTags>
+        	<li>Soldier</li>
+      	</defaultOutfitTags>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_StandardApparel" />
+  </ThingDef>
+
+  <ThingDef Name="LightLeatherArmorBase" ParentName="LeatherArmorBase" Abstract="True">
+   	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>5</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>160</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.5</StuffEffectMultiplierArmor>
+    </statBases>
+   	<apparel>
+      	<layers>
+        	<li>Armor</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef Name="HeavyLeatherArmorBase" ParentName="LeatherArmorBase" Abstract="True">
+  	<recipeMaker>
+			<skillRequirements>
+        			<Crafting>6</Crafting>
+      		</skillRequirements>
+    </recipeMaker>
+    <statBases>
+    	<MaxHitPoints>195</MaxHitPoints>
+      	<StuffEffectMultiplierArmor>0.7</StuffEffectMultiplierArmor>
+    </statBases>
+   	<apparel>
+      	<layers>
+        	<li>Armor</li>
+        	<li>Middle</li>
+      	</layers>
+    </apparel>
+  </ThingDef>
+
+  <!-- Plate Armor Pieces -->
+<!-- Lower Body -->
+
+<ThingDef ParentName="LightLeatherArmorBase">
+    <defName>Apparel_LightLeatherArmorPants</defName>
+    <label>light leather armor legs</label>
+    <description>Leather pads strapped around the legs for protection. Provides moderate protection.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>50</costStuffCount>
+    <statBases>
+		<WorkToMake>6000</WorkToMake>
+      	<Mass>2.5</Mass>
+      	<EquipDelay>1</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyLeatherArmorBase">
+    <defName>Apparel_HeavyLeatherArmorPants</defName>
+    <label>heavy leather armor legs</label>
+    <description>Thick leather armor fully encasing the legs for protection. Gives a slight penalty to move speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>60</costStuffCount>
+    <statBases>
+		<WorkToMake>9000</WorkToMake>
+      	<Mass>5</Mass>
+      	<EquipDelay>2</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      	<MoveSpeed>-0.2</MoveSpeed>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Legs</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+
+<!-- Upper Body -->
+
+  <ThingDef ParentName="LightLeatherArmorBase">
+    <defName>Apparel_LightLeatherArmorBody</defName>
+    <label>light leather armor chestpiece</label>
+    <description>Leather panels strapped to the upper body. Gives moderate protection.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>60</costStuffCount>
+    <statBases>
+		<WorkToMake>8000</WorkToMake>
+      	<Mass>2.5</Mass>
+      	<EquipDelay>2</EquipDelay>
+    </statBases>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Torso</li>
+        	<li>Neck</li>
+      	</bodyPartGroups>
+    	<wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyLeatherArmorBase">
+    <defName>Apparel_HeavyLeatherArmorBody</defName>
+    <label>heavy leather armor chestpiece</label>
+    <description>A thick leather chest piece fully encasing the torso for protection. Gives good protection but slows down work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>70</costStuffCount>
+    <statBases>
+		<WorkToMake>10000</WorkToMake>
+      	<Mass>6</Mass>
+      	<EquipDelay>4</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      <WorkSpeedGlobal>-.02</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      	<bodyPartGroups>
+        	<li>Torso</li>
+        	<li>Neck</li>
+      	</bodyPartGroups>
+        <wornGraphicPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</wornGraphicPath>
+    </apparel>
+  </ThingDef>
+
+   <!-- Arms -->
+
+  <ThingDef ParentName="LightLeatherArmorBase">
+    <defName>Apparel_LightLeatherArmorArms</defName>
+    <label>light leather armor arms</label>
+    <description>Light leather panels strapped to the arms. Gives moderate protection without impacting work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>30</costStuffCount>
+    <statBases>
+		<WorkToMake>4000</WorkToMake>
+      	<Mass>1</Mass>
+      	<EquipDelay>.5</EquipDelay>
+    </statBases>
+    <apparel>
+      <bodyPartGroups>
+        <li>Arms</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="HeavyLeatherArmorBase">
+    <defName>Apparel_HeavyLeatherArmorArms</defName>
+    <label>heavy leather armor arms</label>
+    <description>Arm protection formed from thick leather panels. Gives good protection but slows work speed.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/PlateArmor/PlateArmor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>40</costStuffCount>
+    <statBases>
+		<WorkToMake>5000</WorkToMake>
+      	<Mass>2</Mass>
+      	<EquipDelay>1</EquipDelay>
+    </statBases>
+        <equippedStatOffsets>
+      <WorkSpeedGlobal>-.05</WorkSpeedGlobal>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Shoulders</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+    </apparel>
+  </ThingDef>
+
+
+</Defs>
